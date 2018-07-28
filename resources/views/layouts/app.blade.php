@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -106,5 +107,12 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script>
+        @if(Session::has('success'))
+        console.log('session')
+    toastr.success("{{ Session::get('success') }}")
+        @endif
+      </script>
 </body>
 </html>
