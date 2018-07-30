@@ -13,7 +13,7 @@
         <tbody>
           @foreach($posts as $post)
           <tr>
-            <td>Image</td>
+            <td><img src="{{$post->featured}}" alt="Featured image" style="height:50px; width:90px"></td>
             <td>{{ $post->title }}</td>
             <td>
               {{-- <a href="{{ route('posts.edit', ['id' => $posts->id]) }}" class="btn btn-info btn-xs"> --}}
