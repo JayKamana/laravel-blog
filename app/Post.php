@@ -16,7 +16,7 @@ class Post extends Model
   }
 
   protected $fillable = [
-    'title', 'content', 'featured', 'category_id'
+    'title', 'content', 'featured', 'category_id', 'slug'
   ];
 
   protected $dates = ['deleted_at'];

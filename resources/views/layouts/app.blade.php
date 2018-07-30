@@ -110,8 +110,10 @@
     <script src="{{ asset('js/toastr.min.js') }}"></script>
     <script>
         @if(Session::has('success'))
-        console.log('session')
     toastr.success("{{ Session::get('success') }}")
+        @endif
+        @if(Session::has('info'))
+    toastr.info("{{ Session::get('info') }}")
         @endif
       </script>
 </body>
