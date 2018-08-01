@@ -119,6 +119,17 @@ class PostsController extends Controller
    */
   public function destroy($id)
   {
-        //
+    $post = Post::find($id);
+
+    $post->delete();
+
+    Session::flash('success', 'The post was just trashed');
+
+    return redirect()->back();
+  }
+
+  public function trashed()
+  {
+    return view('admin.posts.trashed')->with('posts', Post::onlyTrashed()->get());
   }
 }
