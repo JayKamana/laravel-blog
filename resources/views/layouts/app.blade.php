@@ -84,12 +84,15 @@
           @if(Auth::check())          
             <div class="col-lg-4">
               <ul class="list-group">
-                <li class="list-group-item">
+              @if(Auth::user()->admin)
+              <li class="list-group-item">
                   <a href="{{ route('users') }}">Users</a>
                 </li>
                 <li class="list-group-item">
                   <a href="{{ route('user.create') }}">Create new user</a>
                 </li>
+              @endif
+               
                 <li class="list-group-item">
                   <a href="{{ route('home') }}">Home</a>
                 </li>
