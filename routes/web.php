@@ -15,9 +15,10 @@
 Auth::routes();
 
 
-Route::get('/', function () {
-  return view('welcome');
-});
+Route::get('/', [
+  'uses' => 'FrontEndController@index',
+  'as' => 'index'
+]);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 

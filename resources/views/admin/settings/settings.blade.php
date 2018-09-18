@@ -25,12 +25,12 @@
 
           <div class="form-group">
               <label for="number">Contact Number</label>
-              <input id="number" type="text" value="{{ $setting->contact_number }}" name="number" class="form-control">
+              <input id="number" type="text" value="{{ $setting->contact_number }}" name="contact_number" class="form-control">
             </div>
 
         <div class="form-group">
           <label for="email">Contact Email</label>
-          <input id="email" type="email" value="{{ $setting->contact_email }}" name="email" class="form-control">
+          <input id="email" type="email" value="{{ $setting->contact_email }}" name="contact_email" class="form-control">
         </div>
        
         <div class="form-group">
