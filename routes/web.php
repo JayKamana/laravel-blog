@@ -20,6 +20,11 @@ Route::get('/', [
   'as' => 'index'
 ]);
 
+Route::get('/{slug}', [
+  'uses' => 'FrontEndController@singlePost',
+  'as' => 'post.single'
+]);
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
   Route::get('/home', [
