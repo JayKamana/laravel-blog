@@ -140,7 +140,7 @@
                   @endif
 
                   @if($next)
-                  <a href="" class="btn-next-wrap">
+                  <a href="{{ route('post.single', ['slug' => $next->slug]) }}" class="btn-next-wrap">
                       <div class="btn-content">
                           <div class="btn-content-title">Next Post</div>
                       <p class="btn-content-subtitle">{{ $next->title }}</p>
@@ -162,19 +162,16 @@
                           <span class="long-line"></span>
                       </div>
                   </div>
+
+                  @include('includes.disqus')
               </div>
-
-              <div class="row">
-
-              </div>
-
 
           </div>
 
           <!-- End Post Details -->
 
           <!-- Sidebar-->
-
+          <br>
           <div class="col-lg-12">
               <aside aria-label="sidebar" class="sidebar sidebar-right">
                   <div  class="widget w-tags">
@@ -187,15 +184,10 @@
                       </div>
 
                       <div class="tags-wrap">
-                          <a href="#" class="w-tags-item">SEO</a>
-                          <a href="#" class="w-tags-item">Advertising</a>
-                          <a href="#" class="w-tags-item">Business</a>
-                          <a href="#" class="w-tags-item">Optimization</a>
-                          <a href="#" class="w-tags-item">Digital Marketing</a>
-                          <a href="#" class="w-tags-item">Social</a>
-                          <a href="#" class="w-tags-item">Keyword</a>
-                          <a href="#" class="w-tags-item">Strategy</a>
-                          <a href="#" class="w-tags-item">Audience</a>
+                          @foreach($tags as $tag)
+                      <a href="#" class="w-tags-item">{{$tag->tag}}</a>
+                          @endforeach
+                          
                       </div>
                   </div>
               </aside>

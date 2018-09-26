@@ -122,7 +122,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">{{$second_post->title}}</a>
+                                        <a href="{{ route('post.single', ['slug' => $second_post->slug]) }}">{{$second_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -172,7 +172,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">{{$third_post->title}}</a>
+                                        <a href="{{ route('post.single', ['slug' => $third_post->slug]) }}">{{$third_post->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -231,7 +231,7 @@
                                     <div class="case-item__thumb">
                                         <img src="{{$post->featured}}" alt="{{$post->title}}">
                                     </div>
-                                    <h6 class="case-item__title text-center"><a href="#">{{$post->title}}</a></h6>
+                                    <h6 class="case-item__title text-center"><a href="{{ route('post.single', ['slug' => $post->slug]) }}">{{$post->title}}</a></h6>
                                 </div>
                             </div>
                             @endforeach
@@ -260,7 +260,7 @@
                                     <div class="case-item__thumb">
                                         <img src="{{$post->featured}}" alt="{{$post->title}}">
                                     </div>
-                                    <h6 class="case-item__title text-center"><a href="#">{{$post->title}}</a></h6>
+                                    <h6 class="case-item__title text-center"><a href="{{ route('post.single', ['slug' => $post->slug]) }}">{{$post->title}}</a></h6>
                                 </div>
                             </div>
                             @endforeach
@@ -294,9 +294,9 @@
                     </div>
 
                     <div class="images-block">
-                        <img src="app/img/subscr-gear.png" alt="gear" class="gear">
-                        <img src="app/img/subscr1.png" alt="mail" class="mail">
-                        <img src="app/img/subscr-mailopen.png" alt="mail" class="mail-2">
+                        <img src="{{ asset('app/img/subscr-gear.png') }}" alt="gear" class="gear">
+                        <img src="{{ asset('app/img/subscr1.png') }}" alt="mail" class="mail">
+                        <img src="{{ asset('app/img/subscr-mailopen.png') }}" alt="mail" class="mail-2">
                     </div>
                 </div>
             </div>
