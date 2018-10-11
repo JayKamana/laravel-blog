@@ -30,6 +30,11 @@ Route::get('/category/{id}', [
   'as' => 'category.single'
 ]);
 
+Route::get('/tag/{id}', [
+  'uses' => 'FrontEndController@tag',
+  'as' => 'tag.single'
+]);
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
   Route::get('/home', [
